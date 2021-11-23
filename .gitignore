@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/haribo/node_modules
+/haribo/.pnp
+/haribo/.pnp.js
+
+# testing
+/haribo/coverage
+
+# production
+/haribo/build
+
+# misc
+/haribo/.DS_Store
+/haribo/.env.local
+/haribo/.env.development.local
+/haribo/.env.test.local
+/haribo/.env.production.local
+
+/haribo/npm-debug.log*
+/haribo/yarn-debug.log*
+/haribo/yarn-error.log*
