@@ -14,12 +14,23 @@ const Footer = () => {
         </div>
 
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li className="ms-3"><a className="text-muted" href="none"><img className="bi" src={facebook} alt='log' width="24" height="24" /></a></li>
-            <li className="ms-3"><a className="text-muted" href="none"><img className="bi" src={instagram} alt='log' width="24" height="24" /></a></li>
-            <li className="ms-3"><a className="text-muted" href="none"><img className="bi" src={twitter} alt='log' width="24" height="24" /></a></li>
+            <li className="ms-3">
+                <a className="text-muted" href="none">
+                    <img className="bi" src={facebook} alt='facebook' width="24" height="24" />
+                </a>
+            </li>
+            <li className="ms-3">
+                <a className="text-muted" href="none">
+                    <img className="bi" src={instagram} alt='instagram' width="24" height="24" />
+                </a>
+            </li>
+            <li className="ms-3">
+                <a className="text-muted" href="none">
+                    <img className="bi" src={twitter} alt='twitter' width="24" height="24" />
+                </a>
+            </li>
         </ul>
         </footer>
     );
 }
-
 export default Footer;
