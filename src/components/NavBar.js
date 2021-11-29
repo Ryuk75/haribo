@@ -1,6 +1,6 @@
 import gummyBlack from '../img/gummyBlack.png'
 
-const NavBar = () => {
+let NavBar = () => {
     return(
         <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom sticky-top">
             <a href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">

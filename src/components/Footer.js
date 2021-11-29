@@ -3,7 +3,7 @@ import facebook from '../img/iconos/facebook.png'
 import instagram from '../img/iconos/instagram.png'
 import gummyBlack from '../img/gummyBlack.png'
 
-const Footer = () => {
+let Footer = () => {
     return(
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div className="col-md-4 d-flex align-items-center">
