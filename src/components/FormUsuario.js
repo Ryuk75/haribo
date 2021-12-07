@@ -29,68 +29,68 @@ function FormUsuario(props) {
     }
 
     return (
-        <form onSubmit={ onFormSubmit }>
-            <div className="form-group">
-                <label className="control-label" htmlFor="Id" >Cedula</label>
+        <form class="mx-5" onSubmit={ onFormSubmit }>
+            <div className="form-group mb-2">
+                <label className="control-label" htmlFor="Id" ><i>Cedula</i></label>
                 <input className="form-control" type="number"
                        name="cedula" value={usuario.cedula} onChange={ edicionUsuario } />
             </div>
-            <div className="form-group">
-                <label className="control-label">Nombre</label>
+            <div className="form-group mb-2">
+                <label className="control-label"><i>Nombre</i></label>
                 <input className="form-control" type="text"
                        name="nombre" value={usuario.nombre} onChange={ edicionUsuario }/>
             </div>
-            <div className="form-group">
-                <label className="control-label">Apellido</label>
+            <div className="form-group mb-2">
+                <label className="control-label"><i>Apellido</i></label>
                 <input className="form-control" type="text"
                        name="apellido" value={usuario.apellido} onChange={ edicionUsuario }/>
             </div>
-            <div className="form-group">
-                <label className="control-label">Email</label>
+            <div className="form-group mb-2">
+                <label className="control-label"><i>Email</i></label>
                 <input className="form-control" type="text"
                        name="email" value={usuario.email} onChange={ edicionUsuario }/>
             </div>
-            <div className="form-group">
-                <label className="control-label">Genero</label>
-                <select className="form-control" 
+            <div className="form-group mb-2">
+                <label className="control-label"><i>Genero</i></label>
+                <select className="form-control"
                        name="genero" onChange={ edicionUsuario }>
                     <option>Seleccionar...</option>
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
                 </select>
             </div>
-            <div className="form-group">
-                <label className="control-label">Ciudad</label>
-                <input className="form-control" type="text" 
+            <div className="form-group mb-2">
+                <label className="control-label"><i>Ciudad</i></label>
+                <input className="form-control" type="text"
                        name="ciudad" value={usuario.ciudad} onChange={ edicionUsuario }/>
             </div>
-            <div className="form-group">
-                <label className="control-label">Telefono</label>
-                <input className="form-control" type="number" 
+            <div className="form-group mb-2">
+                <label className="control-label"><i>Telefono</i></label>
+                <input className="form-control" type="number"
                        name="telefono" value={usuario.telefono} onChange={ edicionUsuario }/>
             </div>
-            <div className="form-group">
-                <label className="control-label">Password</label>
-                <input className="form-control" type="password" 
+            <div className="form-group mb-2">
+                <label className="control-label"><i>Password</i></label>
+                <input className="form-control" type="password"
                        name="pasword" onChange={ edicionUsuario }/>
             </div>
-            <div className="form-group">
-                <label className="control-label">Status</label>
-                <select className="form-control" 
+            <div className="form-group mb-2">
+                <label className="control-label"><i>Status</i></label>
+                <select className="form-control"
                        name="status" onChange={ edicionUsuario }>
                     <option>Seleccionar...</option>
                     <option value="true">Activo</option>
                     <option value="false">Inactivo</option>
                 </select>
             </div>
-            <div className="form-group">
-                <label className="control-label">Nacimiento</label>
-                <input className="form-control" type="date" 
+            <div className="form-group mb-2">
+                <label className="control-label"><i>Nacimiento</i></label>
+                <input className="form-control" type="date"
                        name="nacimiento" value={usuario.nacimiento} onChange={ edicionUsuario }/>
             </div>
             <div className="form-group">
-                <button className="btn btn-success mr-1" type="submit">Guardar</button>
-                <button className="btn btn-danger" type="button">Cancelar</button>
+                <button className="btn btn-sm btn-primary m-2" type="submit">Guardar</button>
+                <button className="btn btn-sm btn-danger" type="button">Cancelar</button>
             </div>
         </form>
     );
