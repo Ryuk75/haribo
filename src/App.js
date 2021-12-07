@@ -25,9 +25,7 @@ function App() {
     {cedula:1746884508, nombre:"Blithe", apellido:"Demer", email:"bdemere@cam.ac.uk", genero:"Female", ciudad:"Teryayevo", telefono:3005299660, password:"gX8wBd", status:false, nacimiento:"11/06/1972"}
   ]);
 
-  const informacion = {
-    ubicacion: "2021 Haribo Gummies. Miami, Fl"
-  };
+  const informacion = { ubicacion: "2021 Haribo Gummies. Miami, Fl" };
 
   const modificarStatus = (cedula) => {
     let copiaUsuarios = [ ...listaUsuarios ];
@@ -37,7 +35,22 @@ function App() {
   }
 
   const eliminarUsuario = (cedula) => {
-    let copiaUsuarios = listaUsuarios.find( (parametro) => parametro.cedula !== cedula);;
+    let copiaUsuarios = listaUsuarios.filter( (parametro) => parametro.cedula !== cedula );
+    setListaUsuarios(copiaUsuarios);
+  }
+
+  const agregarUsuario = (nuevoUsuario) => {
+    let copiaUsuarios = [ ...listaUsuarios ];
+    copiaUsuarios.push(nuevoUsuario);
+    setListaUsuarios(copiaUsuarios);
+  }
+
+  const editarUsuario = (nuevoUsuario) => {
+    let copiaUsuarios = [ ...listaUsuarios ];
+    let usuarioSeleccionado = copiaUsuarios.find( (usuario) => usuario.cedula === nuevoUsuario.cedula );
+    for ( var atributo in usuarioSeleccionado) {
+      usuarioSeleccionado[ atributo ] = nuevoUsuario[ atributo ]
+    }
     setListaUsuarios(copiaUsuarios);
   }
 
@@ -46,7 +59,9 @@ function App() {
       <div className='container'>
         <NavBar />
         <TablaUsuarios usuarios = { listaUsuarios } modificarStatus = { modificarStatus }
-                       eliminarUsuario = { eliminarUsuario } />
+                       eliminarUsuario = { eliminarUsuario }
+                       agregarUsuario = { agregarUsuario }
+                       editarUsuario = { editarUsuario } />
         <Footer { ...informacion }/>
       </div>
     </Fragment>
