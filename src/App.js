@@ -28,26 +28,26 @@ function App() {
   const informacion = { ubicacion: "2021 Haribo Gummies. Miami, Fl" };
 
   const modificarStatus = (cedula) => {
-    let copiaUsuarios = [ ...listaUsuarios ];
-    let usuario = copiaUsuarios.find( (parametro) => parametro.cedula === cedula);
+    const copiaUsuarios = [ ...listaUsuarios ];
+    const usuario = copiaUsuarios.find( (parametro) => parametro.cedula === cedula);
     usuario.status = !usuario.status;
     setListaUsuarios(copiaUsuarios);
   }
 
   const eliminarUsuario = (cedula) => {
-    let copiaUsuarios = listaUsuarios.filter( (parametro) => parametro.cedula !== cedula );
+    const copiaUsuarios = listaUsuarios.filter( (parametro) => parametro.cedula !== cedula );
     setListaUsuarios(copiaUsuarios);
   }
 
   const agregarUsuario = (nuevoUsuario) => {
-    let copiaUsuarios = [ ...listaUsuarios ];
+    const copiaUsuarios = [ ...listaUsuarios ];
     copiaUsuarios.push(nuevoUsuario);
     setListaUsuarios(copiaUsuarios);
   }
 
   const editarUsuario = (nuevoUsuario) => {
-    let copiaUsuarios = [ ...listaUsuarios ];
-    let usuarioSeleccionado = copiaUsuarios.find( (usuario) => usuario.cedula === nuevoUsuario.cedula );
+    const copiaUsuarios = [ ...listaUsuarios ];
+    const usuarioSeleccionado = copiaUsuarios.find( (usuario) => usuario.cedula === nuevoUsuario.cedula );
     for ( var atributo in usuarioSeleccionado) {
       usuarioSeleccionado[ atributo ] = nuevoUsuario[ atributo ]
     }

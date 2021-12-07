@@ -20,13 +20,13 @@ let TablaUsuarios = (props) => {
         nuevoParametroModal.mostrar = false;
         setParametrosModal(nuevoParametroModal);
     }
-    const agregarUsuario = () => {
+    const registrarUsuario = () => {
         const nuevoParametroModal = { ...parametrosModal };
         nuevoParametroModal.modo = "nuevo";
         nuevoParametroModal.mostrar = true;
         nuevoParametroModal.titulo = "Registrar Usuario";
-        nuevoParametroModal.guardarProyecto = props.agregarUsuario;
-        nuevoParametroModal.proyecto = null;
+        nuevoParametroModal.agregarUsuario = props.agregarUsuario;
+        nuevoParametroModal.usuario = null;
         setParametrosModal(nuevoParametroModal);
     }
 
@@ -35,8 +35,8 @@ let TablaUsuarios = (props) => {
         nuevoParametroModal.modo = "editar";
         nuevoParametroModal.mostrar = true;
         nuevoParametroModal.titulo = "Editar Usuario";
-        nuevoParametroModal.guardarProyecto = props.editarUsuario;
-        nuevoParametroModal.proyecto = parametro;
+        nuevoParametroModal.agregarUsuario = props.editarUsuario;
+        nuevoParametroModal.usuario = parametro;
         setParametrosModal(nuevoParametroModal);
     }
 
@@ -51,7 +51,7 @@ let TablaUsuarios = (props) => {
             <div className="card mt-5">
                 <div className="card-body">
                     <button id="btnRegistrarNov" className="btn btn-sm btn-primary float-end"
-                        onClick={ agregarUsuario }>Registrar Usuario</button>
+                        onClick={ registrarUsuario }>Registrar Usuario</button>
                     <h4>Lista de Usuarios Registrados</h4>
                     <h5 className="text-muted"><i>Visualizar, editar, agregar y eliminar usuarios</i></h5>
                 </div>

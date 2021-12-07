@@ -24,7 +24,7 @@ function FormUsuario(props) {
     }
     const onFormSubmit = (evento) => {
         evento.preventDefault();
-        props.onGuardar(usuario);
+        props.registrar(usuario);
         setUsuario(nuevoUsuario);
     }
 
@@ -32,23 +32,23 @@ function FormUsuario(props) {
         <form onSubmit={ onFormSubmit }>
             <div className="form-group">
                 <label className="control-label" htmlFor="Id" >Cedula</label>
-                <input className="form-control" type="number" 
+                <input className="form-control" type="number"
                        name="cedula" value={usuario.cedula} onChange={ edicionUsuario } />
             </div>
             <div className="form-group">
                 <label className="control-label">Nombre</label>
-                <input className="form-control" type="text" 
-                       name="nombre" onChange={ edicionUsuario }/>
+                <input className="form-control" type="text"
+                       name="nombre" value={usuario.nombre} onChange={ edicionUsuario }/>
             </div>
             <div className="form-group">
                 <label className="control-label">Apellido</label>
-                <input className="form-control" type="text" 
-                       name="apellido" onChange={ edicionUsuario }/>
+                <input className="form-control" type="text"
+                       name="apellido" value={usuario.apellido} onChange={ edicionUsuario }/>
             </div>
             <div className="form-group">
                 <label className="control-label">Email</label>
-                <input className="form-control" type="text" 
-                       name="email" onChange={ edicionUsuario }/>
+                <input className="form-control" type="text"
+                       name="email" value={usuario.email} onChange={ edicionUsuario }/>
             </div>
             <div className="form-group">
                 <label className="control-label">Genero</label>
@@ -62,12 +62,12 @@ function FormUsuario(props) {
             <div className="form-group">
                 <label className="control-label">Ciudad</label>
                 <input className="form-control" type="text" 
-                       name="ciudad" onChange={ edicionUsuario }/>
+                       name="ciudad" value={usuario.ciudad} onChange={ edicionUsuario }/>
             </div>
             <div className="form-group">
                 <label className="control-label">Telefono</label>
                 <input className="form-control" type="number" 
-                       name="telefono" onChange={ edicionUsuario }/>
+                       name="telefono" value={usuario.telefono} onChange={ edicionUsuario }/>
             </div>
             <div className="form-group">
                 <label className="control-label">Password</label>
@@ -86,7 +86,7 @@ function FormUsuario(props) {
             <div className="form-group">
                 <label className="control-label">Nacimiento</label>
                 <input className="form-control" type="date" 
-                       name="nacimiento" onChange={ edicionUsuario }/>
+                       name="nacimiento" value={usuario.nacimiento} onChange={ edicionUsuario }/>
             </div>
             <div className="form-group">
                 <button className="btn btn-success mr-1" type="submit">Guardar</button>

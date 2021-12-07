@@ -1,13 +1,17 @@
 import StatusUsuario from './StatusUsuario';
 
-let Usuario = (props) => {
-    const modificarStatus = (event) => {
+let Usuario = ({modificarStatus, eliminarUsuario, editarUsuario, ...props}) => {
+    const onModificarStatus = (event) => {
         event.preventDefault();
-        props.modificarStatus(props.cedula);
+        modificarStatus(props.cedula);
     }
-    const eliminarUsuario = (event) => {
+    const onEliminarUsuario = (event) => {
         event.preventDefault();
-        props.eliminarUsuario(props.cedula);
+        eliminarUsuario(props.cedula);
+    }
+    const onEditarUsuario = (event) => {
+        event.preventDefault();
+        editarUsuario(props);
     }
     return(
         <tr>
@@ -32,13 +36,17 @@ let Usuario = (props) => {
                 <div class="ms-1 me-auto">
                     <div>
                         <span className="badge bg-danger" type="button"
-                                onClick={ eliminarUsuario }>Eliminar</span>
+                                onClick={ onEliminarUsuario }>Eliminar</span>
                     </div>
                     <div>
                         <span className="badge bg-primary" type="button"
-                                onClick={ modificarStatus }>
+                                onClick={ onModificarStatus }>
                                 { props.status ? "Desactivar" : "Activar" }
                         </span>
+                    </div>
+                    <div>
+                        <span className="badge bg-warning" type="button"
+                                onClick={ onEditarUsuario }>Editar</span>
                     </div>
                 </div>
             </td>
