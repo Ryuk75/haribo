@@ -1,6 +1,6 @@
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
-import Principal from './components/Principal'
+//import Principal from './components/Principal'
 import TablaUsuarios from './components/TablaUsuarios';
 import { Fragment, useState } from 'react';
 //import './App.css';
@@ -25,15 +25,28 @@ function App() {
     {cedula:1746884508, nombre:"Blithe", apellido:"Demer", email:"bdemere@cam.ac.uk", genero:"Female", ciudad:"Teryayevo", telefono:3005299660, password:"gX8wBd", status:false, nacimiento:"11/06/1972"}
   ]);
 
-  let informacion = {
+  const informacion = {
     ubicacion: "2021 Haribo Gummies. Miami, Fl"
   };
+
+  const modificarStatus = (cedula) => {
+    let copiaUsuarios = [ ...listaUsuarios ];
+    let usuario = copiaUsuarios.find( (parametro) => parametro.cedula === cedula);
+    usuario.status = !usuario.status;
+    setListaUsuarios(copiaUsuarios);
+  }
+
+  const eliminarUsuario = (cedula) => {
+    let copiaUsuarios = listaUsuarios.find( (parametro) => parametro.cedula !== cedula);;
+    setListaUsuarios(copiaUsuarios);
+  }
 
   return (
     <Fragment>
       <div className='container'>
         <NavBar />
-        <TablaUsuarios usuarios = { listaUsuarios } />
+        <TablaUsuarios usuarios = { listaUsuarios } modificarStatus = { modificarStatus }
+                       eliminarUsuario = { eliminarUsuario } />
         <Footer { ...informacion }/>
       </div>
     </Fragment>

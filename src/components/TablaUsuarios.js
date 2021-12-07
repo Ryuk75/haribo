@@ -1,10 +1,12 @@
 import Usuario from './Usuario';
 
 let TablaUsuarios = (props) => {
-    let usuarios = props.usuarios;
-    let listaUsuarios = usuarios.map(
-        (usuario) => <Usuario key = {usuario.cedula} {...usuario} />
-    );
+    const usuarios = props.usuarios;
+    const listaUsuarios = usuarios.map((usuario) => <Usuario key = {usuario.cedula}
+                                                modificarStatus = { props.modificarStatus }
+                                                eliminarUsuario = { props.eliminarUsuario }
+                                                { ...usuario }/>);
+
     return(
         <div className="container-fluid" >
             <div className="card mt-5">
@@ -18,14 +20,13 @@ let TablaUsuarios = (props) => {
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">Cedula</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
+                        <th scope="col">Usuario/Status</th>
                         <th scope="col">Nacimiento</th>
                         <th scope="col">Email</th>
                         <th scope="col">Genero</th>
                         <th scope="col">Ciudad</th>
                         <th scope="col">Telefono</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
