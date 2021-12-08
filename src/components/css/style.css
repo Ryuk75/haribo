@@ -10,6 +10,10 @@
     font-weight: bold;
 }
 
+.titulosM{
+    text-align: center!important;
+}
+
 Table {
     width: 100%;
     border: 1px solid #f0f0f0;

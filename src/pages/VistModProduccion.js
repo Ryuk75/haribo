@@ -10,6 +10,7 @@ function VistModProduccion(){
     return(
         <div className="container">
             <NavBar/>
+            <h2 className="titulosM">Modulo de producción </h2>
             <div>
                 <Row>
                     <Col md={5}>
