@@ -1,4 +1,6 @@
 import gummyBlack from '../img/gummyBlack.png'
+import React from 'react'
+import MenuL from './MenuLateral'
 
 let NavBar = () => {
     return(
@@ -8,6 +10,9 @@ let NavBar = () => {
             </a>
 
             <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li>
+                    <MenuL/>
+                </li>
                 <li>
                     <a href="none" className="nav-link px-2 link-secondary">Home</a>
                 </li>
